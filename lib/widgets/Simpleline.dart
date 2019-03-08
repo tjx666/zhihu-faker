@@ -10,15 +10,15 @@ class SimpleLine extends StatelessWidget {
 
   SimpleLine({
     Key key,
-    @required this.length,
     @required this.direction,
+    this.length,
     this.width,
     this.color,
   }) : super(key: key);
 
   _getBorder() {
     final borderSide = BorderSide(
-      width: this.width ?? 2.0,
+      width: this.width ?? double.infinity,
       style: BorderStyle.solid,
       color: this.color ?? Colors.black12,
     );
@@ -32,8 +32,18 @@ class SimpleLine extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double boxWidth = length;
+    double boxHeight = length;
+
+    if (direction ==LineDirection.horizaontal) {
+      boxHeight = this.width;
+    } else {
+      boxWidth = this.width;
+    }
+    
     return Container(
-      height: this.length,
+      width: boxWidth,
+      height: boxHeight,
       decoration: BoxDecoration(
         border: this._getBorder(),
       ),

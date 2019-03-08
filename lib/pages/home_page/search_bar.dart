@@ -11,7 +11,6 @@ class SerachBar extends StatelessWidget {
         children: <Widget>[
           Expanded(
             child: Row(
-              mainAxisSize: MainAxisSize.max,
               children: <Widget>[
                 FlatButton.icon(
                   icon: Icon(
@@ -33,8 +32,9 @@ class SerachBar extends StatelessWidget {
             ),
           ),
           SimpleLine(
-            length: 20.0,
             direction: LineDirection.verticle,
+            length: 22.5,
+            width: 1.5,
           ),
           FlatButton.icon(
             icon: Icon(
@@ -54,7 +54,9 @@ class SerachBar extends StatelessWidget {
 }
 
 final _searchBarDecoration = BoxDecoration(
-    color: Colors.black12, borderRadius: BorderRadius.circular(8.0));
+  color: Color.fromRGBO(235, 235, 235, 0.8),
+  borderRadius: BorderRadius.circular(5.0),
+);
 
 final _searchBarTextStyle = TextStyle(
   fontSize: 16.0,
