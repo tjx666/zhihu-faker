@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './search_bar.dart' show SerachBar;
+import './recommend_view.dart' show RecommendView;
 
 class HomePage extends StatefulWidget {
   final Widget child;
@@ -36,15 +37,13 @@ class _HomePageState extends State<HomePage>
           ))
       .toList();
 
-  // FIXME: tabBar 高度太高了"
   TabBar builtTopTabBar() {
     return TabBar(
       isScrollable: false,
       controller: this._controller,
       tabs: _buildTabs(),
       indicatorColor: Colors.black,
-      indicatorSize: TabBarIndicatorSize.tab,
-      unselectedLabelColor: Colors.black26,
+      unselectedLabelColor: Colors.black54,
       labelColor: Colors.black,
     );
   }
@@ -56,6 +55,12 @@ class _HomePageState extends State<HomePage>
         title: SerachBar(),
         bottom: builtTopTabBar(),
         backgroundColor: Colors.white,
+      ),
+      body: TabBarView(
+        controller: this._controller,
+        children: <Widget>[
+          RecommendView(),
+        ],
       ),
     );
   }

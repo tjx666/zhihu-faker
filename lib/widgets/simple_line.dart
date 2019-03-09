@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-enum LineDirection { horizaontal, verticle }
+enum SimpleLineDirection { horizaontal, verticle }
 
 class SimpleLine extends StatelessWidget {
-  final LineDirection direction;
+  final SimpleLineDirection direction;
   final double length;
   final double width;
   final Color color;
@@ -23,7 +23,7 @@ class SimpleLine extends StatelessWidget {
       color: this.color ?? Colors.black12,
     );
 
-    if (this.direction == LineDirection.horizaontal) {
+    if (this.direction == SimpleLineDirection.horizaontal) {
       return Border(top: borderSide);
     } else {
       return Border(right: borderSide);
@@ -35,12 +35,12 @@ class SimpleLine extends StatelessWidget {
     double boxWidth = length;
     double boxHeight = length;
 
-    if (direction ==LineDirection.horizaontal) {
+    if (direction == SimpleLineDirection.horizaontal) {
       boxHeight = this.width;
     } else {
       boxWidth = this.width;
     }
-    
+
     return Container(
       width: boxWidth,
       height: boxHeight,
