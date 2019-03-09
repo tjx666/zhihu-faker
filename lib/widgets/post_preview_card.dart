@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// TODO: 将帖子预览数据修改为一个类, 而不是 map
 class PostPreviewCard extends StatelessWidget {
   final String title;
   final String digest;
@@ -54,9 +55,10 @@ class PostPreviewCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final commentCountText = commentsCount == null ? '' : '${commentsCount} 评论';
+    
     return Container(
       color: Colors.white,
-      margin: EdgeInsets.symmetric(vertical: 4.0),
       padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 15.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,7 +67,8 @@ class PostPreviewCard extends StatelessWidget {
             this.title,
             style: _titleStyle,
             textAlign: TextAlign.left,
-            maxLines: 1,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
           ),
           Container(
             margin: EdgeInsets.symmetric(vertical: 10.0),
@@ -74,7 +77,7 @@ class PostPreviewCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Text('${supportCount} 赞同 · ${commentsCount} 评论',
+              Text('${supportCount} 赞同 · ${commentCountText}',
                   style: _bottomLestTextStyle),
               Icon(
                 Icons.more_horiz,
