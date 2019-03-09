@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './search_bar.dart' show SerachBar;
 import './recommend_view.dart' show RecommendView;
+import './follow_view.dart' show FollowView;
 
 class HomePage extends StatefulWidget {
   final Widget child;
@@ -59,6 +60,7 @@ class _HomePageState extends State<HomePage>
       body: TabBarView(
         controller: this._controller,
         children: <Widget>[
+          FollowView(),
           RecommendView(),
         ],
       ),
