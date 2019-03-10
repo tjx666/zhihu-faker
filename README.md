@@ -4,8 +4,8 @@
 
 ### 关注页面
 
-![关注页面](https://github.com/tjx666/zhihu-faker/blob/master/screenshots/follow.png?raw=true)
+<img src="https://github.com/tjx666/zhihu-faker/blob/master/screenshots/follow.png?raw=true" alt="关注页面" height="750">
 
 ### 推荐页面
 
-![推荐页面](https://github.com/tjx666/zhihu-faker/blob/master/screenshots/recommend.png?raw=true)
+<img src="https://github.com/tjx666/zhihu-faker/blob/master/screenshots/recommend.png?raw=true" alt="推荐页面" height="750">
